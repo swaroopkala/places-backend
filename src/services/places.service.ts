@@ -20,13 +20,10 @@ export class PlacesService {
    */
   async getAutocompleteSuggestions(query: string): Promise<PlacesAutocompleteResponse> {
     try {
-      // Encode the query parameter to handle special characters
       const encodedQuery = encodeURIComponent(query);
       
-      // Construct the URL for the Google Places Autocomplete API
       const url = `${this.baseUrl}/autocomplete/json?input=${encodedQuery}&key=${this.apiKey}`;
       
-      // Make the API request with appropriate headers
       const response = await axios.get<PlacesAutocompleteResponse>(url, {
         headers: {
           'Accept': 'application/json',
@@ -34,7 +31,6 @@ export class PlacesService {
         }
       });
       
-      // Check if the API returned an error status
       if (response.data.status !== 'OK' && response.data.status !== 'ZERO_RESULTS') {
         const error: any = new Error(response.data.error_message || `Google Places API Error: ${response.data.status}`);
         error.status = 500;

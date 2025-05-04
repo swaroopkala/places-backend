@@ -1,7 +1,6 @@
 import dotenv from 'dotenv';
 import path from 'path';
 
-// Load environment variables from .env file
 dotenv.config({ path: path.resolve(__dirname, '../../.env') });
 
 /**
@@ -9,14 +8,11 @@ dotenv.config({ path: path.resolve(__dirname, '../../.env') });
  * Contains all environment variables with defaults
  */
 export const env = {
-  // Server configuration
   port: process.env.PORT || 3000,
   nodeEnv: process.env.NODE_ENV || 'development',
   
-  // Google Places API
   googlePlacesApiKey: process.env.GOOGLE_PLACES_API_KEY || '',
   
-  // Rate limiting
   rateLimitWindowMs: parseInt(process.env.RATE_LIMIT_WINDOW_MS || '15000', 10),
   rateLimitMaxRequests: parseInt(process.env.RATE_LIMIT_MAX_REQUESTS || '100', 10),
 };

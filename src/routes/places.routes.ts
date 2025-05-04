@@ -2,10 +2,8 @@ import { Router } from 'express';
 import { PlacesController } from '../controllers/places.controller';
 import { validateQueryParam } from '../middleware/validation.middleware';
 
-// Create a new router instance
 const router = Router();
 
-// Create an instance of the places controller
 const placesController = new PlacesController();
 
 /**

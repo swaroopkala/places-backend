@@ -6,7 +6,7 @@ A simple Express app built with TypeScript that connects to Google Places API fo
 
 - Provides autocomplete suggestions for place searches
 - Handles API requests securely with validation and rate limiting
-- Includes all the good stuff: CORS, security headers, error handling
+- Includes all the good stuff: CORS, error handling
 
 ## Setup
 

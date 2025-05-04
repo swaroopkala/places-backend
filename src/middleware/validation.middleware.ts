@@ -13,7 +13,6 @@ export const validateQueryParam = (param: string) => {
       return next(error);
     }
     
-    // If the parameter is empty
     if (req.query[param] === '') {
       const error: any = new Error(`Query parameter ${param} cannot be empty`);
       error.status = 400;
