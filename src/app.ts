@@ -1,6 +1,5 @@
 import express, { Express } from 'express';
 import cors from 'cors';
-import helmet from 'helmet';
 import morgan from 'morgan';
 
 import { errorHandler } from './middleware/error.middleware';
@@ -13,9 +12,6 @@ import placesRoutes from './routes/places.routes';
 export const createApp = (): Express => {
   // Create Express app
   const app: Express = express();
-
-  // Apply global middleware
-  app.use(helmet()); // Set security headers
   
   // Configure CORS with more specific options
   app.use(cors({
